@@ -7,15 +7,12 @@ var isPalindrome = function (x) {
     }
     var n = x.toString();
     var y = n.split("");
-    
-    if (y === y.reverse()) {
-        console.log(y);
-        console.log(y.reverse());
-        return true;
-    } else {
-        
-        return false;
+    for (var x = 0; x < y.length; x++) {
+        if (y[x] !== y[y.length - 1 - x]) {
+            return false;
+        }
     }
+    return true;
 };
 
 isPalindrome(10);
