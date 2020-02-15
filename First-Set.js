@@ -21,6 +21,16 @@ var isPalindrome = function (x) {
 // Do not allocate extra space for another array, you must do this by modifying the input array in -place with O(1) extra memory.
 
 var removeDuplicates = function (nums) {
-
+    var x = 0; 
+    var y = {};
+    while(x < nums.length){
+        if(y[nums[x]] !== 1){
+            y[nums[x]] = 1
+            x = x + 1;
+        } else {
+            nums.splice(x, 1)
+        }
+    }
+    return nums.length;
 };
 
