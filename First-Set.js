@@ -137,20 +137,29 @@ var romanToInt = function (s) {
 // Output: [-1, -1]
 
 var searchRange = function (nums, target) {
+    if (nums.length === 1 && nums[0] === target) {
+        return [0, 0];
+    }
     var arr = [];
     for (var x = 0; x < nums.length; x++) {
         var num = nums[x];
         if (num === target && arr.length === 0) {
-            arr.push[x];
+            arr.push(x);
         }
 
         if (num > target && arr.length === 1) {
-            arr.push[(x - 1)];
+            arr.push(x - 1);
             return arr;
         }
     }
-    return [-1, -1];
+    if (arr.length === 0) {
+        return [-1, -1];
+    } else {
+        return [arr[0], nums.length - 1];
+    }
+
 };
+
 
 
 
