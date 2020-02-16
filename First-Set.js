@@ -178,4 +178,30 @@ var searchRange = function (nums, target) {
 // Explanation: The array represents the integer 4321.
 
 
+var plusOne = function (digits) {
+    let array = [];
+    let counter = 1;
+    for (var x = digits.length - 1; x >= 0; x--) {
+        if (counter === 1) {
+            let num = digits[x] + 1;
+            if (num === 10 && x !== 0) {
+                num = 0;
+                array.unshift(num);
+            } else if (x !== 0 && num !== 10) {
+                counter = 0;
+                array.unshift(num);
+            } else if (x === 0 && num === 10) {
+                array.unshift(0);
+                array.unshift(1);
+            } else {
+                array.unshift(num);
+            }
+        } else {
+            array.unshift(digits[x])
+        }
+
+    }
+    return array;
+};
+
 
