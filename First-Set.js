@@ -259,5 +259,10 @@ var removeElement = function (nums, val) {
 // rotate 2 steps to the right: [3, 99, -1, -100]
 
 var rotate = function (nums, k) {
-    
+    while (k > 0) {
+        var x = nums.pop();
+        nums.unshift(x);
+        k = k - 1;
+    }
+    return nums;
 };
