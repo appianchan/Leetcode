@@ -283,5 +283,19 @@ var rotate = function (nums, k) {
 // Output: 4
 
 var singleNumber = function (nums) {
+    var final = {};
+    for (var x = 0; x < nums.length; x++) {
+        var num = nums[x];
+        if (final[num] !== 1) {
+            final[num] = 1;
+        } else {
+            final[num] += 1;
+        }
 
+    }
+    for (var key in final) {
+        if (final[key] === 1) {
+            return key;
+        }
+    }
 };
