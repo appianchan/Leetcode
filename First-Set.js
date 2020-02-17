@@ -227,3 +227,15 @@ var plusOne = function (digits) {
 
 // It doesn't matter what values are set beyond the returned length.
 
+var removeElement = function (nums, val) {
+    var x = 0;
+    while(x < nums.length){
+        var num = nums[x];
+        if(num !== val){
+            x = x + 1;
+        }else{
+            nums.splice(x, 1);
+        }
+    }
+    return nums.length;
+};
