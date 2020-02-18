@@ -390,6 +390,26 @@ var findNumbers = function (nums) {
 // Output: true
 
 var uniqueOccurrences = function (arr) {
-    
+    var anobject = {};
+    for (var x = 0; x < arr.length; x++) {
+        var num = arr[x];
+        if (anobject[num] === undefined) {
+            anobject[num] = 1;
+        } else {
+            anobject[num] += 1;
+        }
+    }
+    var final = [];
+    var array = anobject.values;
+    console.log(array);
+    for (var x = 0; x < array.length; x++) {
+        if (final.includes(array[x])) {
+            return false;
+        } else {
+            final.push(array[x])
+        }
+    }
+    return true;
 
 };
+uniqueOccurrences([1, 2, 2, 1, 1, 3]);
