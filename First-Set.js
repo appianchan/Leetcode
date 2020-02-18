@@ -400,8 +400,7 @@ var uniqueOccurrences = function (arr) {
         }
     }
     var final = [];
-    var array = anobject.values;
-    console.log(array);
+    var array = Object.values(anobject);
     for (var x = 0; x < array.length; x++) {
         if (final.includes(array[x])) {
             return false;
@@ -410,6 +409,7 @@ var uniqueOccurrences = function (arr) {
         }
     }
     return true;
+
 
 };
 uniqueOccurrences([1, 2, 2, 1, 1, 3]);
