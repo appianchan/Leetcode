@@ -313,19 +313,30 @@ var singleNumber = function (nums) {
 // 82 + 22 = 68
 // 62 + 82 = 100
 // 12 + 02 + 02 = 1
-
+var counter = [];
 var isHappy = function (n) {
-    var n = n.toString();
-    var arr = n.split('');
-    var final = 0;
-    for(var x = 0; x < arr.length; x++){
-        arr[x] = parseInt(arr[x], 10);
-        final += Math.pow((arr[x]), 2);
-    }
-    if(final === 1){
+    if (n === 1) {
+        counter = [];
         return true;
     }
-    isHappy(final);
-};
+    if (counter.includes(n)) {
+        counter = [];
+        return false;
+    } else {
+        counter.push(n);
+    }
 
-isHappy(19);
+    if (n < 10) {
+        return isHappy(Math.pow(n, 2))
+    }
+    var y = n.toString();
+    var arr = y.split('');
+    var final = 0;
+    for (var x = 0; x < arr.length; x++) {
+        var z = parseInt(arr[x], 10);
+        final += Math.pow(z, 2);
+    }
+
+
+    return isHappy(final);
+};
