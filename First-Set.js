@@ -315,5 +315,17 @@ var singleNumber = function (nums) {
 // 12 + 02 + 02 = 1
 
 var isHappy = function (n) {
-
+    var n = n.toString();
+    var arr = n.split('');
+    var final = 0;
+    for(var x = 0; x < arr.length; x++){
+        arr[x] = parseInt(arr[x], 10);
+        final += Math.pow((arr[x]), 2);
+    }
+    if(final === 1){
+        return true;
+    }
+    isHappy(final);
 };
+
+isHappy(19);
