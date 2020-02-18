@@ -361,3 +361,12 @@ var isHappy = function (n) {
 // Output: 1
 // Explanation:
 // Only 1771 contains an even number of digits.
+var findNumbers = function (nums) {
+    var counter = 0;
+    for (var x = 0; x < nums.length; x++) {
+        if ((nums[x] > 9 && 100 > nums[x]) || (nums[x] > 999 && nums[x] < 10000)) {
+            counter += 1;
+        }
+    }
+    return counter;
+};
