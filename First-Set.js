@@ -472,3 +472,13 @@ var replaceElements = function (arr) {
 
 // Input: ["H", "a", "n", "n", "a", "h"]
 // Output: ["h", "a", "n", "n", "a", "H"]
+
+var reverseString = function (s) {
+    var final = [];
+    for (var x = s.length - 1; x >= 0; x--) {
+        final.push(s[x]);
+    }
+    for (var x = 0; x < s.length; x++) {
+        s[x] = final[x];
+    }
+};
