@@ -431,6 +431,24 @@ uniqueOccurrences([1, 2, 2, 1, 1, 3]);
 // 1 <= arr.length <= 10 ^ 4
 // 1 <= arr[i] <= 10 ^ 5
 
+var checkHighestElement = function (arr) {
+    var counter = 0;
+    for (var x = 0; x < arr.length - 1; x++) {
+        var num = arr[x];
+        if (num > counter) {
+            counter = num;
+        }
+    }
+    return counter;
+}
 var replaceElements = function (arr) {
-
+    var final = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (i === arr.length - 1) {
+            final.push(-1);
+            break;
+        }
+        final.push(checkHighestElement(arr.slice(i + 1, arr.length)))
+    }
+    return final;
 };
