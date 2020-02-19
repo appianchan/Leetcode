@@ -511,5 +511,17 @@ var reverseString = function (s) {
 // ]
 
 var fizzBuzz = function (n) {
-
+    var final = [];
+    for (var x = 1; x <= n; x++) {
+        if (x % 3 === 0 && x % 5 === 0) {
+            final.push("FizzBuzz");
+        } else if (x % 3 === 0) {
+            final.push("Fizz");
+        } else if (x % 5 === 0) {
+            final.push("Buzz");
+        } else {
+            final.push(x.toString());
+        }
+    }
+    return final;
 };
