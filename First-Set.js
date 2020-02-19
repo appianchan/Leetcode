@@ -433,7 +433,7 @@ uniqueOccurrences([1, 2, 2, 1, 1, 3]);
 
 var checkHighestElement = function (arr) {
     var counter = 0;
-    for (var x = 0; x < arr.length - 1; x++) {
+    for (var x = 0; x < arr.length; x++) {
         var num = arr[x];
         if (num > counter) {
             counter = num;
@@ -447,6 +447,10 @@ var replaceElements = function (arr) {
         if (i === arr.length - 1) {
             final.push(-1);
             break;
+        }
+        if (i === arr.length - 2) {
+            final.push(arr[arr.length - 1]);
+            continue;
         }
         final.push(checkHighestElement(arr.slice(i + 1, arr.length)))
     }
