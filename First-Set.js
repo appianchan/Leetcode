@@ -555,7 +555,9 @@ var duplicateZeros = function (arr) {
     while (x < arr.length) {
         var num = arr[x];
         if (num === 0) {
-
+            arr.splice(x + 1, 0, 0);
+            arr.pop(arr.length - 1);
+            x = x + 2;
         } else {
             x++;
         }
