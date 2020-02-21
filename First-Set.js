@@ -574,3 +574,22 @@ var duplicateZeros = function (arr) {
 
 // The order of the result is not important.So in the above example, [5, 3] is also correct.
 // Your algorithm should run in linear runtime complexity.Could you implement it using only constant space complexity ?
+
+var singleNumber = function (nums) {
+    var final = [];
+    var obj = {};
+    for (var x = 0; x < nums.length; x++) {
+        var num = nums[x];
+        if (obj[num] === undefined) {
+            obj[num] = 1;
+        } else {
+            obj[num] += 1
+        }
+    }
+    for (var key in obj) {
+        if (obj[key] === 1) {
+            final.push(key);
+        }
+    }
+    return final;
+};
