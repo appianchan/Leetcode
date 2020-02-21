@@ -550,3 +550,14 @@ var fizzBuzz = function (n) {
 
 // 1 <= arr.length <= 10000
 // 0 <= arr[i] <= 9
+var duplicateZeros = function (arr) {
+    var x = 0;
+    while (x < arr.length) {
+        var num = arr[x];
+        if (num === 0) {
+
+        } else {
+            x++;
+        }
+    }
+};
