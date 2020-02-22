@@ -619,5 +619,20 @@ var singleNumber = function (nums) {
 // So you finally need to output 3.
 
 var findPoisonedDuration = function (timeSeries, duration) {
-
+    if (timeSeries.length === 0) {
+        return 0;
+    }
+    var x = 0;
+    var counter = duration;
+    while (x < timeSeries.length - 1) {
+        var num = timeSeries[x];
+        var next_num = timeSeries[x + 1];
+        if (next_num < num + duration) {
+            counter = counter + (next_num - num);
+        } else {
+            counter = counter + duration;
+        }
+        x++;
+    }
+    return counter;
 };
