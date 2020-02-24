@@ -721,3 +721,7 @@ var uncommonFromSentences = function (A, B) {
     return final;
 
 };
+
+var printVertically = function (s) {
+
+};
