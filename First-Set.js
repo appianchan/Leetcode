@@ -651,5 +651,73 @@ var findPoisonedDuration = function (timeSeries, duration) {
 // [2, 3]
 
 var findDuplicates = function (nums) {
-    
+    var final = [];
+    var obj = {};
+    for (var x = 0; x < nums.length; x++) {
+        var num = nums[x];
+        if (obj[num] === 1) {
+            obj[num] = 2;
+        } else {
+            obj[num] = 1;
+        }
+    }
+    for (var key in obj) {
+        if (obj[key] === 2) {
+            final.push(key);
+        }
+    }
+    return final;
+};
+
+
+// We are given two sentences A and B.  (A sentence is a string of space separated words.Each word consists only of lowercase letters.)
+
+// A word is uncommon if it appears exactly once in one of the sentences, and does not appear in the other sentence.
+
+// Return a list of all uncommon words.
+
+// You may return the list in any order.
+
+// Example 1:
+
+// Input: A = "this apple is sweet", B = "this apple is sour"
+// Output: ["sweet", "sour"]
+// Example 2:
+
+// Input: A = "apple apple", B = "banana"
+// Output: ["banana"]
+// Note:
+
+// 0 <= A.length <= 200
+// 0 <= B.length <= 200
+// A and B both contain only spaces and lowercase letters.
+
+var uncommonFromSentences = function (A, B) {
+    var arr1 = A.split(" ");
+    var arr2 = B.split(" ");
+    var obj = {};
+    var final = [];
+    for (var x = 0; x < arr1.length; x++) {
+        var word = arr1[x];
+        if (obj[word] === undefined) {
+            obj[word] = 1;
+        } else {
+            obj[word] += 1;
+        }
+    }
+    for (var x = 0; x < arr2.length; x++) {
+        var word = arr2[x];
+        if (obj[word] === undefined) {
+            obj[word] = 1;
+        } else {
+            obj[word] += 1;
+        }
+    }
+    for (var key in obj) {
+        if (obj[key] === 1) {
+            final.push(key);
+        }
+    }
+    return final;
+
 };
