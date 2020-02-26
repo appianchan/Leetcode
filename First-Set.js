@@ -801,5 +801,18 @@ var printVertically = function (s) {
 // N  will be in range[1, 10000].
 
 var rotatedDigits = function (N) {
+    // var counter = 0;
+    // for (var x = 1; x <= N; x++) {
+    //     var arr = [];
+    //     if (x < 10) {
+    //         if (x === 2 || x === 5 || x === 6 || x === 9) {
+    //             counter += 1;
+    //         }
+    //     } else if (x < 100) {
+    //         var single = x % 10;
+    //         arr.push(single);
+    //         arr.push(x - single)
+    //     }
 
+    // }
 };
