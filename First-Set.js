@@ -761,28 +761,28 @@ Each word would be put on only one column and that in one column there will be o
 //     It's guaranteed that there is only one space between 2 words.
 
 var printVertically = function (s) {
-    // var arr = s.split(" ");
-    // var final = new Array(arr.length);
-    // var counter = false;
-    // var counter2 = 0;
-    // while (counter === false) {
-    //     var counter3 = 0;
-    //     for (var x = 0; x < arr.length; x++) {
-    //         if (arr[x].length - 1 >= counter2) {
-    //             final[x] += " ";
-    //             counter3 += 1;
-    //         } else {
-    //             final[x] += arr[x][counter2];
-    //         }
+    var arr = s.split(" ");
+    var final = new Array(arr.length);
+    var counter = false;
+    var counter2 = 0;
+    while (counter === false) {
+        var counter3 = 0;
+        for (var x = 0; x < arr.length; x++) {
+            if (arr[x].length - 1 >= counter2) {
+                final[x] += " ";
+                counter3 += 1;
+            } else {
+                final[x] += arr[x][counter2];
+            }
 
-    //     }
-    //     if (counter3 === arr.length - 1) {
-    //         counter === true;
-    //     }
-    //     counter2 += 1;
+        }
+        if (counter3 === arr.length - 1) {
+            counter === true;
+        }
+        counter2 += 1;
 
-    // }
-    // return final;
+    }
+    return final;
 };
 // X is a good number if after rotating each digit individually by 180 degrees, we get a valid number that is different from X.Each digit must be rotated - we cannot choose to leave it alone.
 
