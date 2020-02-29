@@ -912,5 +912,14 @@ var isMonotonic = function (A) {
 // Input: nums = [1, 2, 3, 1, 2, 3], k = 2
 // Output: false
 var containsNearbyDuplicate = function (nums, k) {
-
+    for (var x = 0; x < nums.length - 1; x++) {
+        for (var y = x + 1; y < nums.length; y++) {
+            var num1 = nums[x];
+            var num2 = nums[y];
+            if (num1 === num2 && Math.abs(x - y) <= k) {
+                return true;
+            }
+        }
+    }
+    return false;
 };
