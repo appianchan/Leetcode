@@ -882,5 +882,17 @@ var checkPerfectNumber = function (num) {
 //     - 100000 <= A[i] <= 100000
 
 var isMonotonic = function (A) {
-
+    if (A.length > 2) {
+        var less = false;
+        var great = false;
+        for (var x = 2; x < A.length; x++) {
+            var num1 = A[0];
+            var num2 = A[1];
+            var num3 = A[x];
+            if (num1)
+        }
+        return true;
+    } else {
+        return true;
+    }
 };
