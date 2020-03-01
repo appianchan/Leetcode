@@ -979,3 +979,35 @@ var judgeSquareSum = function (c) {
     }
     return false;
 };
+
+// Count the number of prime numbers less than a non - negative number, n.
+
+//     Example:
+
+// Input: 10
+// Output: 4
+// Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+
+var isPrime = function (n) {
+    if (n <= 1) {
+        return false;
+    }
+    if (n === 2 || n === 3) {
+        return true;
+    }
+    for (var x = 2; x < n; x++) {
+        if (n % x === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+var countPrimes = function (n) {
+    var counter = 0
+    for (var x = 2; x < n; x++) {
+        if (isPrime(x)) {
+            counter++;
+        }
+    }
+    return counter;
+};
