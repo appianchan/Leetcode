@@ -970,5 +970,20 @@ var mySqrt = function (x) {
 // Output: False
 
 var judgeSquareSum = function (c) {
-
+    var arr = [];
+    var num = Math.sqrt(c);
+    if (Number.isInteger(num) === true) {
+        return true;
+    }
+    for (var x = 0; x <= c; x++) {
+        arr.push(x * x);
+    }
+    for (var y = 0; y < arr.length; y++) {
+        for (var z = 0; z < arr.length; z++) {
+            if (arr[y] + arr[z] === c) {
+                return true;
+            }
+        }
+    }
+    return false;
 };
