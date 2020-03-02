@@ -1052,7 +1052,18 @@ var longestCommonSubsequence = function (text1, text2) {
 // Since 2 has only one digit, return it.
 
 var addDigits = function (num) {
-
+    if (num < 10) {
+        return num;
+    }
+    var counter = 0;
+    var x = num.toString();
+    var z = x.split('');
+    for (var y = 0; y < z.length; y++) {
+        var num_string = z[y];
+        var number = parseInt(num_string, 10);
+        counter += number;
+    }
+    return addDigits(counter);
 };
 
 // In a forest, each rabbit has some color.Some subset of rabbits(possibly all of them) tell you how many other rabbits have the same color as them.Those answers are placed in an array.
@@ -1076,5 +1087,20 @@ var addDigits = function (num) {
 // Output: 0
 
 var numRabbits = function (answers) {
+    var counter = 0;
+    var unique = {};
+    for (var x = 0; x < answers.length; x++) {
+        var num = answers[x];
+        if (unique[num] === undefined) {
+            unique[num] = 1;
+            counter += (num + 1);
+        } else if (unique[num] === num + 1) {
+            unique[num] = 1;
+            counter += (num + 1)
+        } else {
+            unique[num] += 1;
+        }
+    }
 
+    return counter;
 };
