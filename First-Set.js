@@ -1039,8 +1039,26 @@ var countPrimes = function (n) {
 // Explanation: There is no such common subsequence, so the result is 0.
 
 var longestCommonSubsequence = function (text1, text2) {
+    var y = 0;
+    var returnlength = 0;
+    var counter = 0;
+    for (var x = 0; x < text1.length; x++) {
+        var a1 = text1[x];
+        y = counter;
+        while (y < text2.length) {
+            var a2 = text2[y];
+            if (a2 === a1) {
+                returnlength += 1;
+                counter = y + 1;
+                break;
+            }
+            y++;
+        }
 
-    
+
+    }
+    return returnlength;
+
 };
 
 // Given a non - negative integer num, repeatedly add all its digits until the result has only one digit.
