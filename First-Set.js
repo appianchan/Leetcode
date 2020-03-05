@@ -1138,5 +1138,37 @@ var numRabbits = function (answers) {
 // Output: [4, 9, 9, 49, 121]
 
 var sortedSquares = function (A) {
+    var final = [];
+    for (var x = 0; x < A.length; x++) {
+        final.push(A[x] * A[x]);
+    }
+    // var counter = false;
+    // while(counter = false){
+    //     counter = true;
+    //     for(var x = 0; x < final.length - 1; x++){
+    //         var num = final[x];
+    //         var num2 = final[x + 1];
+    //         if(num2 < num){
+    //             counter = false;
+    //             final = final.slice(0, x) + [num2] + [num] + final.slice(x + 2, final.length);
+    //         }
+    //     }
+    // }
+    final.sort((a, b) => a - b);
+    return final;
+};
+
+// Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+// Example:
+
+// Input: [0, 1, 0, 3, 12]
+// Output: [1, 3, 12, 0, 0]
+// Note:
+
+// You must do this in -place without making a copy of the array.
+// Minimize the total number of operations.
+
+var moveZeroes = function (nums) {
 
 };
