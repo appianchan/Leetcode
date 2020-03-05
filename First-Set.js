@@ -1170,5 +1170,25 @@ var sortedSquares = function (A) {
 // Minimize the total number of operations.
 
 var moveZeroes = function (nums) {
-
+    var counter = 0;
+    for (var x = 0; x < nums.length; x++) {
+        if (nums[x] === 0) {
+            counter += 1;
+        }
+    }
+    var y = 0;
+    while (y < nums.length) {
+        if (counter === 0) {
+            break;
+        }
+        var num = nums[y];
+        if (num === 0) {
+            nums.splice(y, 1);
+            nums.push(0);
+            counter--;
+            continue;
+        }
+        y++;
+    }
+    return nums;
 };
