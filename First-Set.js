@@ -1211,3 +1211,24 @@ var moveZeroes = function (nums) {
 // 0 <= arr1[i], arr2[i] <= 1000
 // Each arr2[i] is distinct.
 // Each arr2[i] is in arr1.
+
+var relativeSortArray = function (arr1, arr2) {
+    var final = [];
+    var leftovers = [];
+    for (var x = 0; x < arr2.length; x++) {
+        var num2 = arr2[x];
+        for (var y = 0; y < arr1.length; y++) {
+            var num1 = arr1[y];
+            if (num2 === num1) {
+                final.push(num1);
+            }
+        }
+    }
+    for (var x = 0; x < arr1.length; x++) {
+        if (arr2.includes(arr1[x]) === false) {
+            leftovers.push(arr1[x]);
+        }
+    }
+
+    return final.concat(leftovers.sort((a, b) => a - b));
+};
