@@ -726,13 +726,13 @@ var printVertically = function (s) {
 
 };
 
-Given a string s.Return all the words vertically in the same order in which they appear in s.
-Words are returned as a list of strings, complete with spaces when is necessary. (Trailing spaces are not allowed).
-Each word would be put on only one column and that in one column there will be only one word.
+// Given a string s.Return all the words vertically in the same order in which they appear in s.
+// Words are returned as a list of strings, complete with spaces when is necessary. (Trailing spaces are not allowed).
+// Each word would be put on only one column and that in one column there will be only one word.
 
 
 
-    Example 1:
+//     Example 1:
 
 // Input: s = "HOW ARE YOU"
 // Output: ["HAY", "ORO", "WEU"]
@@ -1257,5 +1257,65 @@ var relativeSortArray = function (arr1, arr2) {
 
 var commonChars = function (A) {
     var final = {};
+
+};
+// Given a function f(x, y) and a value z, return all positive integer pairs x and y where f(x, y) == z.
+
+// The function is constantly increasing, i.e.:
+
+// f(x, y) < f(x + 1, y)
+// f(x, y) < f(x, y + 1)
+// The function interface is defined like this:
+
+// interface CustomFunction {
+//     public:
+//     // Returns positive integer f(x, y) for any given positive integer x and y.
+//     int f(int x, int y);
+// };
+// For custom testing purposes you're given an integer function_id and a target z as input, where function_id represent one function from an secret internal list, on the examples you'll know only two functions from the list.
+
+// You may return the solutions in any order.
+
+
+
+//     Example 1:
+
+// Input: function_id = 1, z = 5
+// Output: [[1, 4], [2, 3], [3, 2], [4, 1]]
+// Explanation: function_id = 1 means that f(x, y) = x + y
+// Example 2:
+
+// Input: function_id = 2, z = 5
+// Output: [[1, 5], [5, 1]]
+// Explanation: function_id = 2 means that f(x, y) = x * y
+
+var findSolution = function (customfunction, z) {
+
+};
+
+
+// Every email consists of a local name and a domain name, separated by the @sign.
+
+// For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name.
+
+// Besides lowercase letters, these emails may contain '.'s or '+'s.
+
+// If you add periods('.') between some characters in the local name part of an email address, mail sent there will be forwarded to the same address without dots in the local name.For example, "alice.z@leetcode.com" and "alicez@leetcode.com" forward to the same email address.  (Note that this rule does not apply for domain names.)
+
+//     If you add a plus('+') in the local name, everything after the first plus sign will be ignored.This allows certain emails to be filtered, for example m.y + name@email.com will be forwarded to my@email.com.  (Again, this rule does not apply for domain names.)
+
+//     It is possible to use both of these rules at the same time.
+
+// Given a list of emails, we send one email to each address in the list.How many different addresses actually receive mails ?
+
+
+
+//     Example 1:
+
+// Input: ["test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"]
+// Output: 2
+// Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails
+
+var numUniqueEmails = function (emails) {
 
 };
