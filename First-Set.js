@@ -1336,5 +1336,8 @@ var numUniqueEmails = function (emails) {
 
 
 var sortArrayByParityII = function (A) {
+    var final = [];
+    while (final.length !== 0) {
 
+    }
 };
