@@ -1336,8 +1336,28 @@ var numUniqueEmails = function (emails) {
 
 
 var sortArrayByParityII = function (A) {
+    var true_length = A.length;
     var final = [];
-    while (final.length !== 0) {
-
+    var i = 0;
+    while (A.length !== 0) {
+        if (i % 2 === 0) {
+            for (var x = 0; x < A.length; x++) {
+                if (A[x] % 2 === 0) {
+                    final.push(A[x]);
+                    A.splice(x, 1);
+                    break;
+                }
+            }
+        } else {
+            for (var x = 0; x < A.length; x++) {
+                if (A[x] % 2 !== 0) {
+                    final.push(A[x]);
+                    A.splice(x, 1);
+                    break;
+                }
+            }
+        }
+        i++;
     }
+    return final;
 };
