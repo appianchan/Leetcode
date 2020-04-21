@@ -1370,7 +1370,50 @@ var sortArrayByParityII = function (A) {
 // Output: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
 
 var shortestToChar = function (S, C) {
+    var shortestToChar = function (S, C) {
+        var final = [];
+        for (var x = 0; x < S.length; x++) {
 
+            var char = S[x];
+            if (char === C) {
+                final.push(0);
+                continue;
+            }
+            var backchar = null;
+            var forwardchar = null;
+            for (var y = x + 1; y < S.length; y++) {
+                var char2 = S[y];
+                if (char2 === C) {
+                    forwardchar = y - x;
+                    break;
+                }
+            }
+            for (var z = x - 1; z >= 0; z--) {
+                var char3 = S[z];
+                if (char3 === C) {
+                    backchar = x - z;
+                    break;
+                }
+            }
+            if (forwardchar === null) {
+                final.push(backchar);
+                continue;
+            }
+            if (backchar === null) {
+                final.push(forwardchar);
+                continue;
+            }
+            if (forwardchar <= backchar) {
+                final.push(forwardchar);
+                continue;
+            }
+            if (forwardchar > backchar) {
+                final.push(backchar);
+                continue;
+            }
+        }
+        return final;
+    };
 };
 
 // Given an array of distinct integers arr, find all pairs of elements with the minimum absolute difference of any two elements.
