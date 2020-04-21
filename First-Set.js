@@ -1485,5 +1485,19 @@ var countSquares = function (matrix) {
 // Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 
 var reverseWords = function (s) {
+    var y = [];
+    s = s.split(" ");
+    for (var x = 0; x < s.length; x++) {
+        var word = s[x];
+        var new_word = "";
+        for (var z = word.length - 1; z >= 0; z--) {
+            new_word = new_word + word[z];
+            if (z === 0) {
+                // new_word = new_word + word[z];
+                y.push(new_word);
+            }
+        }
 
+    }
+    return y.join(" ");
 };
