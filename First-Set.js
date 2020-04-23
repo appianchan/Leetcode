@@ -1317,7 +1317,22 @@ var findSolution = function (customfunction, z) {
 // Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails
 
 var numUniqueEmails = function (emails) {
-
+    var final = [];
+    for (var x = 0; x < emails.length; x++) {
+        var emailz = emails[x];
+        emailz = emailz.split("@");
+        var local = emailz[0];
+        var domain = emailz[1];
+        local = local.split(".").join("");
+        if (local.search("/+/") !== -1) {
+            var n = local.search("/+/");
+            local = local.slice(0, n);
+        }
+        domain = domain.split(".").join("");
+        emailz.join("@");
+        final.push(emailz);
+    }
+    return Array.from(new Set(final));
 };
 
 // Given an array A of non - negative integers, half of the integers in A are odd, and half of the integers are even.
