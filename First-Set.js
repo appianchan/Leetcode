@@ -1440,7 +1440,28 @@ var shortestToChar = function (S, C) {
 // Output: [[-14, -10], [19, 23], [23, 27]]
 
 var minimumAbsDifference = function (arr) {
-
+    var final = [];
+    arr = arr.sort((a, b) => a - b);
+    var difference = null;
+    for (var x = 0; x < arr.length - 1; x++) {
+        var num1 = arr[x];
+        for (var y = x + 1; y < arr.length; y++) {
+            var num2 = arr[y];
+            if (difference === null) {
+                difference = (num2 - num1);
+                final.push([num1, num2]);
+            } else {
+                if (num2 - num1 < difference) {
+                    final = [];
+                    difference = num2 - num1;
+                    final.push([num1, num2]);
+                } else if (num2 - num1 === difference) {
+                    final.push([num1, num2]);
+                }
+            }
+        }
+    }
+    return final;
 };
 
 // Given an array arr.You can choose a set of integers and remove all the occurrences of these integers in the array.
