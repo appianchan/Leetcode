@@ -1756,3 +1756,25 @@ var reverse = function (x) {
     }
 
 };
+
+var maxArea = function (height) {
+    var highest = 0;
+    for (var x = 0; x < height.length - 1; x++) {
+        var num1 = height[x];
+        for (var y = x + 1; y < height.length; y++) {
+            var num2 = height[y];
+            if (num1 > num2) {
+                // final.push(num2 * (y - x));
+                if (highest < num2 * (y - x)) {
+                    highest = num2 * (y - x);
+                }
+            } else {
+                // final.push(num1 * (y - x));
+                if (highest < num1 * (y - x)) {
+                    highest = num1 * (y - x);
+                }
+            }
+        }
+    }
+    return highest;
+};
