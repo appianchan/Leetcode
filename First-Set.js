@@ -1580,3 +1580,22 @@ var reverseWords = function (s) {
     }
     return y.join(" ");
 };
+
+var findLucky = function (arr) {
+    var obj = {};
+    for (var x = 0; x < arr.length; x++) {
+        var num = arr[x];
+        if (obj[num] === null) {
+            obj[num] = 1;
+        } else {
+            obj[num] += 1;
+        }
+
+    }
+    for (var key in obj) {
+        if (key === obj[key]) {
+            return key;
+        }
+    }
+    return obj[2];
+};
