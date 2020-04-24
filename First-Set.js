@@ -1701,3 +1701,58 @@ var zigzag = function(string, numRows){
     Return z;
 
 }
+
+
+// Reverse Integer
+// Easy
+// Given a 32 - bit signed integer, reverse digits of an integer.
+//     Example 1:
+// Input: 123
+// Output: 321
+
+// Example 2:
+// Input: -123
+// Output: -321
+
+// Example 3:
+// Input: 120
+// Output: 21
+
+// Note:
+// Assume we are dealing with an environment which could only store integers within the 32 - bit signed integer range: [−231, 231 − 1].For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+
+var reverse = function (x) {
+    if (x === 0) {
+        return 0;
+    }
+    var negative = false
+    if (x < 0) {
+        negative = true;
+        x = x * -1
+    }
+    var a = x.toString();
+
+    var arr = a.split("");
+    // return arr;
+    var final = [];
+    var counter = 0;
+    for (var x = arr.length - 1; x >= 0; x--) {
+        if (arr[arr.length - 1] === '0' && counter === 0 && arr[x - 1] !== '0') {
+            counter = 1;
+            continue;
+        } else {
+            final.push(arr[x]);
+        }
+    }
+    // arr = arr.reverse();
+    final = final.join("");
+    var number = parseInt(final, 10);
+    if (negative === false && number < 2147483647) {
+        return number;
+    } else if (negative === true && (number * -1) > -2147483648) {
+        return number * -1;
+    } else {
+        return 0;
+    }
+
+};
