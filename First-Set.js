@@ -1938,3 +1938,14 @@ function groupAnagrams(words){
     }
     return Object.values(anagrams);
 }
+
+I give you a scrambled list of n unique integers between 0 and n. Tell me what number is missing. 
+function ordernumbers(arr){
+    arr.sort((a, b) => a-b);
+    for(var x = 0; x < arr.length; x++){
+        var num = arr[x];
+        if(num !== x + 1){
+            return (x + 1);
+        }
+    }
+}
