@@ -1851,3 +1851,37 @@ function anagrams(str1, str2) {
 
     return Object.values(letters).every(letterCount => letterCount === 0);
 }
+
+
+// You've given an array of integers where each integer represents a jump of it's value in the array. 
+// For instanceof, the integer 2 represents a jump of two indices forward in the array; the integer -3 represents a jump of three indices backward in the array. 
+
+// If a jump spills past the array bounds, it wraps over the other SVGAnimatedEnumeration. For instanceof, a jump of -1 at index 0 brings us to the
+// last index in the array. Similarly, a jump of 1 at the last index in the array brings us to the index 0. 
+
+// Write a function that returns a boolean representing whether the jumps in the array form a 
+// single containsNearbyDuplicate. A single cycle occurs if, starting at any index in the array and following 
+// the jumps, every element in the array is visited exactly once before landing back ont he starting index.reverse
+
+// Sample input:
+// array = [2, 3, 1, -4, -4, 2]
+
+// sample output:
+// true
+
+function hasSingleCycle(array){
+    let numElementsVisited = 0;
+    let currentIdx = 0;
+    while(numElementsVisited < array.length){
+        if(numElementsVisited > 0 && currentIdx === 0) return false;
+        numElementsVisited++;
+        currentIdx = getNextIdx(currentIdx, array);
+    }
+    return currentIdx === 0;
+}
+
+function getNextIdx(currentIdx, array){
+    const jump = array[currentIdx];
+    const nextIdx = (currentIdx + jump) % array.length;
+    return nextIdx >= 0 ? nextIdx + array.length;
+}
