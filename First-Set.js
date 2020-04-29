@@ -1885,3 +1885,29 @@ function getNextIdx(currentIdx, array){
     const nextIdx = (currentIdx + jump) % array.length;
     return nextIdx >= 0 ? nextIdx + array.length;
 }
+
+Write a function that takes in an array of integers and returns a sorted version of that array. 
+Use the Insertion Sort algorithm to sort the array. 
+
+Sample Input
+array = [8, 5, 2, 9, 5, 6, 3];
+
+Sample Output
+[2, 3, 5, 5, 6, 8, 9]
+
+function insertion_sort(array){
+    for (var x = 0; x < array.length; x++) {
+        var number = array[x];
+        array.splice(x, 1); //remove number from array
+        for (var y = 0; y < array.length; y++) {
+            if (number < array[y]) {
+                if (number > array[y + 1]) {
+                    array.splice(y, 0, number); //insert number back in
+					break;
+                }
+            }
+        }
+    }
+    return array;
+
+}
