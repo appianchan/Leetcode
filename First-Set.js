@@ -1939,7 +1939,7 @@ function groupAnagrams(words){
     return Object.values(anagrams);
 }
 
-I give you a scrambled list of n unique integers between 0 and n. Tell me what number is missing. 
+// I give you a scrambled list of n unique integers between 0 and n. Tell me what number is missing. 
 function ordernumbers(arr){
     arr.sort((a, b) => a-b);
     for(var x = 0; x < arr.length; x++){
@@ -1948,4 +1948,20 @@ function ordernumbers(arr){
             return (x + 1);
         }
     }
+}
+
+// Write a function that takes in the head of a Singly Linked List. The function should reverse the list 
+// and return its new head. Note that every node in the Singly Linked List has a "value" property storing its value 
+// as well as a "next" property pointing to the next node in the list or None(null) if it is the tail of the list
+
+function reverseLinkedList(head){
+    let p1 = null;
+    let p2 = head;
+    while(p2 !== null){
+        const p3 = p2.next;
+        p2.next = p1;
+        p1 = p2;
+        p2 = p3;
+    }
+    return p1;
 }
