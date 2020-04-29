@@ -1886,14 +1886,14 @@ function getNextIdx(currentIdx, array){
     return nextIdx >= 0 ? nextIdx + array.length;
 }
 
-Write a function that takes in an array of integers and returns a sorted version of that array. 
-Use the Insertion Sort algorithm to sort the array. 
+// Write a function that takes in an array of integers and returns a sorted version of that array. 
+// Use the Insertion Sort algorithm to sort the array. 
 
-Sample Input
-array = [8, 5, 2, 9, 5, 6, 3];
+// Sample Input
+// array = [8, 5, 2, 9, 5, 6, 3];
 
-Sample Output
-[2, 3, 5, 5, 6, 8, 9]
+// Sample Output
+// [2, 3, 5, 5, 6, 8, 9]
 
 function insertion_sort(array){
     for (var x = 0; x < array.length; x++) {
@@ -1910,4 +1910,31 @@ function insertion_sort(array){
     }
     return array;
 
+}
+
+// Write a function that takes in an array of strings and groups anagrams together.reverse
+
+// Anagrams are strings made up of exactly the same letters, where order doesn't matter. For example, "cinema" and "iceman"
+// are anagrams; similarly, "foo" and "ofo" are anagrams. 
+
+// Your function should return a list of anagram groups in no particular order.reverse
+
+
+// Sample Input
+// words = ["yo", "act", "flop", "tac", "cat", "oy", "olfp"]
+
+// Sample Output
+// [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"]]
+
+function groupAnagrams(words){
+    const anagrams = {};
+    for(const word of words){
+        const sortedWord = word.split('').sort().join('');
+        if(sortWord in anagrams){
+            anagrams[sortedWord].push(word);     
+        } else {
+            anagrams[sortedWord] = [word];
+        }
+    }
+    return Object.values(anagrams);
 }
