@@ -2052,3 +2052,30 @@ function arrayto0(array){
     }
     return array;
 }
+
+// Given an array nums containing n + 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist.Assume that there is only one duplicate number, find the duplicate one.
+
+//     Example 1:
+
+// Input: [1, 3, 4, 2, 2]
+// Output: 2
+// Example 2:
+
+// Input: [3, 1, 3, 4, 2]
+// Output: 3
+var findDuplicate = function (nums) {
+    var obj = {};
+    for (var x = 0; x < nums.length; x++) {
+        var num = nums[x];
+        if (!obj[num]) {
+            obj[num] = 1
+        } else {
+            obj[num] += 1
+        }
+    }
+    for (var key in obj) {
+        if (obj[key] >= 2) {
+            return key
+        }
+    }
+};
