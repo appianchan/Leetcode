@@ -1965,3 +1965,30 @@ function reverseLinkedList(head){
     }
     return p1;
 }
+
+// Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0 ? Find all unique triplets in the array which gives the sum of zero.
+//     Note:
+// The solution set must not contain duplicate triplets.
+//     Example:
+// Given array nums = [-1, 0, 1, 2, -1, -4],
+
+//     A solution set is:
+// [
+//     [-1, 0, 1],
+//     [-1, -1, 2]
+// ]
+function sets(arr){
+    var arr = [];
+    for (var x = 0; x < nums.length; x++) {
+        for (var y = x + 1; y < nums.length; y++) {
+            for (var z = y + 1; z < nums.length; z++) {
+                if (nums[x] + nums[y] + nums[z] = 0) {
+                    var subset = [num[x], num[y], num[z]].sort((a, b) a - b);
+                    arr.push(subset);
+                }
+            }
+        }
+    }
+    return arr;
+
+}
