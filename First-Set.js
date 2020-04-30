@@ -1992,3 +1992,63 @@ function sets(arr){
     return arr;
 
 }
+
+// Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in -place.
+//     Example 1:
+// Input:
+// [
+//     [1, 1, 1],
+//     [1, 0, 1],
+//     [1, 1, 1]
+// ]
+// Output:
+// [
+//     [1, 0, 1],
+//     [0, 0, 0],
+//     [1, 0, 1]
+// ]
+
+// Example 2:
+// Input:
+// [
+//     [0, 1, 2, 0],
+//     [3, 4, 5, 2],
+//     [1, 3, 1, 5]
+// ]
+// Output:
+// [
+//     [0, 0, 0, 0],
+//     [0, 4, 5, 0],
+//     [0, 3, 1, 0]
+// ]
+
+function arrayto0(array){
+    var zeros = [];
+    for (var y = 0; y < array.length; y++) {
+        var row = array[y];
+        for (var x = 0; x < row.length; x++) {
+            if (row[x] === 0) {
+                zeros.push([x, y]);
+            }
+        }
+    }
+    var row_length = array[0].length;
+    var column_length = array.length;
+    for (var z = 0; z < zeros.length; z++) {
+        var position = zeros[z];
+        var position_y = position[1];
+        for (var x = 0; x < row_length.length; x++) {
+            array[x][position_y] = 0
+        }
+
+    }
+    for (var z = 0; z < zeros.length; z++) {
+        var position = zeros[z];
+        var position_x = position[0];
+        for (var y = 0; y < column_length.length; y++) {
+            array[position_x][y] = 0
+        }
+
+    }
+    return array;
+}
