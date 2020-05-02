@@ -2352,3 +2352,80 @@ var smallerNumbersThanCurrent = function (nums) {
     }
     return arr;
 };
+
+
+// Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+
+
+//     Example 1:
+
+// Input: n = 234
+// Output: 15
+// Explanation:
+// Product of digits = 2 * 3 * 4 = 24
+// Sum of digits = 2 + 3 + 4 = 9
+// Result = 24 - 9 = 15
+// Example 2:
+
+// Input: n = 4421
+// Output: 21
+// Explanation:
+// Product of digits = 4 * 4 * 2 * 1 = 32
+// Sum of digits = 4 + 4 + 2 + 1 = 11
+// Result = 32 - 11 = 21
+
+// Constraints:
+
+// 1 <= n <= 10 ^ 5
+
+var subtractProductAndSum = function (n) {
+    var sum = 0;
+    var product = 1;
+    var num = 0;
+    var test_for_zero = n;
+    test_for_zero = test_for_zero.toString();
+    test_for_zero.split();
+    for (var x = 0; x < test_for_zero.length; x++) {
+        if (test_for_zero[x] === "0") {
+            product = product * 0;
+            break;
+        }
+    }
+    if (n % 100000 !== n) {
+        num = (n - n % 100000) / 100000;
+        sum = sum + num;
+        product = product * num;
+        n = n % 100000;
+    }
+    if (n % 10000 !== n) {
+        num = (n - n % 10000) / 10000;
+        sum = sum + num;
+        product = product * num;
+        n = n % 10000;
+    }
+    if (n % 1000 !== n) {
+        num = (n - n % 1000) / 1000;
+        sum = sum + num;
+        product = product * num;
+        n = n % 1000;
+    }
+    if (n % 100 !== n) {
+        num = (n - n % 100) / 100;
+        sum = sum + num;
+        product = product * num;
+        n = n % 100;
+    }
+    if (n % 10 !== n) {
+        num = (n - n % 10) / 10;
+        sum = sum + num;
+        product = product * num;
+        n = n % 10;
+    }
+    sum = sum + n;
+    product = product * n;
+
+    var difference = product - sum;
+    return (difference);
+
+};
+
