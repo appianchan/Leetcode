@@ -2503,5 +2503,10 @@ Array.prototype.myReduce = function (callback, acc) {
 };
 
 var shuffle = function(nums, n) {
-    
+    var final = [];
+    for(var x = 0; x < nums.length - n; x++){
+        final.push(nums[x]);
+        final.push(nums[x + n]);
+    }
+    return final;
 };
