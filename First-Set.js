@@ -2521,5 +2521,23 @@ var shuffle = function(nums, n) {
 // Return the maximum amount of splitted balanced strings.
 
 var balancedStringSplit = function(s) {
-    
+    var l_counter = 0;
+    var r_counter = 0;
+    var final = 0;
+    s.split();
+    for(var x = 0; x < s.length; x++){
+        var char = s[x];
+        if(char === "L"){
+            l_counter++;
+        }
+        if(char === "R"){
+            r_counter++;
+        }
+        if(l_counter === r_counter ){
+            final++;
+            l_counter = 0;
+            r_counter = 0;
+        }
+    }
+    return final;
 };
