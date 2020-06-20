@@ -2502,3 +2502,6 @@ Array.prototype.myReduce = function (callback, acc) {
     return acc;
 };
 
+var shuffle = function(nums, n) {
+    
+};
