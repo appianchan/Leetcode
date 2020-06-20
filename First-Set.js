@@ -2501,7 +2501,11 @@ Array.prototype.myReduce = function (callback, acc) {
 
     return acc;
 };
+// Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
 
+// Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+ 
 var shuffle = function(nums, n) {
     var final = [];
     for(var x = 0; x < nums.length - n; x++){
@@ -2509,4 +2513,13 @@ var shuffle = function(nums, n) {
         final.push(nums[x + n]);
     }
     return final;
+};
+// Balanced strings are those who have equal quantity of 'L' and 'R' characters.
+
+// Given a balanced string s split it in the maximum amount of balanced strings.
+
+// Return the maximum amount of splitted balanced strings.
+
+var balancedStringSplit = function(s) {
+    
 };
