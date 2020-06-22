@@ -2546,7 +2546,14 @@ var balancedStringSplit = function(s) {
 
 // Return the running sum of nums.
 var runningSum = function (nums) {
+    var final = [];
+    var counter = 0;
+    for (var x = 0; x < nums.length; x++) {
+        counter = counter + nums[x];
+        final.push(counter);
 
+    }
+    return final;
 };
 
 // Given the array of integers nums, you will choose two different indices i and j of that array.Return the maximum value of(nums[i] - 1) * (nums[j] - 1).
