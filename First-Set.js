@@ -2575,5 +2575,7 @@ var runningSum = function (nums) {
 // Output: 12
 
 var maxProduct = function (nums) {
-
+    nums.sort((a, b) => a - b);
+    var x = nums.length - 1;
+    return (nums[x] - 1) * (nums[x - 1] - 1);
 };
