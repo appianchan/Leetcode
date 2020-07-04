@@ -2602,3 +2602,7 @@ var kidsWithCandies = function (candies, extraCandies) {
     }
     return final;
 };
+
+// Given a m * n matrix grid which is sorted in non - increasing order both row - wise and column - wise.
+
+// Return the number of negative numbers in grid.
