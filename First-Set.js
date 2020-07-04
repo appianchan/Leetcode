@@ -2606,3 +2606,15 @@ var kidsWithCandies = function (candies, extraCandies) {
 // Given a m * n matrix grid which is sorted in non - increasing order both row - wise and column - wise.
 
 // Return the number of negative numbers in grid.
+
+var countNegatives = function (grid) {
+    var final = 0;
+    for (var x = 0; x < grid.length; x++) {
+        for (var y = 0; y < grid[x].length; y++) {
+            if (grid[x][y] < 0) {
+                final++;
+            }
+        }
+    }
+    return final;
+};
