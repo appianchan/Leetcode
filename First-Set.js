@@ -970,14 +970,7 @@ var mySqrt = function (x) {
 // Output: False
 
 var judgeSquareSum = function (c) {
-    for (var y = 0; y * y <= c; y++) {
-        for (var z = 0; z * z <= c; z++) {
-            if (y * y + z * z === c) {
-                return true;
-            }
-        }
-    }
-    return false;
+    
 };
 
 // Count the number of prime numbers less than a non - negative number, n.
