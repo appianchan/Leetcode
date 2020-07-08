@@ -2755,3 +2755,42 @@ var twoSum = function (numbers, target) {
 // 1 is typically treated as an ugly number.
 // n does not exceed 1690.
 
+var isUgly = function (num) {
+    if (num <= 0) {
+        return false;
+    }
+    if (num === 1) {
+        return true;
+    }
+    var number = [];
+    while (num !== 2 && num !== 3 && num !== 5) {
+        if (num % 2 === 0) {
+            num = num / 2;
+            continue;
+        }
+        if (num % 3 === 0) {
+            num /= 3;
+            continue;
+        }
+        if (num % 5 === 0) {
+            num /= 5;
+            continue;
+        }
+        return false;
+    }
+    return true;
+};
+var nthUglyNumber = function (n) {
+    var counter = 0;
+    var stepper = 1
+    while (counter <= n) {
+        if (isUgly(stepper) === true) {
+            counter++;
+        }
+        if (counter === n) {
+            return stepper;
+        }
+        stepper++;
+
+    }
+};
