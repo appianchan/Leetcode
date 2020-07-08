@@ -2729,3 +2729,14 @@ var isUgly = function (num) {
 // Output: [1, 2]
 // Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 
+var twoSum = function (numbers, target) {
+    for (var x = 0; x < numbers.length; x++) {
+        for (var y = x + 1; y < numbers.length; y++) {
+            var num1 = numbers[x];
+            var num2 = numbers[y];
+            if (num1 + num2 === target) {
+                return [x + 1, y + 1];
+            }
+        }
+    }
+};
