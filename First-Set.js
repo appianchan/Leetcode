@@ -2814,5 +2814,14 @@ var nthUglyNumber = function (n) {
 // 0 <= A[i] <= 5000
 
 var sortArrayByParity = function (A) {
-
+    var arr = [];
+    for (var x = 0; x < A.length; x++) {
+        var num = A[x];
+        if (num % 2 === 1) {
+            arr.push(num);
+        } else {
+            arr.unshift(num);
+        }
+    }
+    return arr;
 };
