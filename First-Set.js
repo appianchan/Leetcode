@@ -2833,5 +2833,16 @@ var sortArrayByParity = function (A) {
 // Notice that when a group of students is selected they can reorder in any possible way between themselves and the non selected students remain on their seats.
 
 var heightChecker = function (heights) {
+    var counter = 0;
 
+    var final = [...heights];
+    final.sort((a, b) => a - b);
+
+    for (var x = 0; x < final.length; x++) {
+        if (heights[x] !== final[x]) {
+            counter = counter + 1;
+        }
+    }
+    return counter;
+    
 };
