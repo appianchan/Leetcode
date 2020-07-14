@@ -2880,3 +2880,13 @@ var findDisappearedNumbers = function (nums) {
 
 // Input: [9, 6, 4, 2, 3, 5, 7, 0, 1]
 // Output: 8
+
+var missingNumber = function (nums) {
+    var x = 0;
+    while (x > -1) {
+        if (!nums.includes(x)) {
+            return x;
+        }
+        x++;
+    }
+};
