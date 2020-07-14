@@ -2861,5 +2861,11 @@ var heightChecker = function (heights) {
 // Output:
 // [5, 6]
 var findDisappearedNumbers = function (nums) {
-
+    var final = [];
+    for (var x = 1; x <= nums.length; x++) {
+        if (!nums.includes(x)) {
+            final.push(x);
+        }
+    }
+    return final;
 };
