@@ -2946,3 +2946,38 @@ var constructRectangle = function (area) {
 
 // Input: ransomNote = "aa", magazine = "aab"
 // Output: true
+
+var canConstruct = function (ransomNote, magazine) {
+    var obj1 = {};
+    var obj2 = {};
+    for (var x = 0; x < ransomNote.length; x++) {
+        var letter = ransomNote[x];
+        if (obj1[letter] === undefined) {
+            obj1[letter] = 1;
+        } else {
+            obj1[letter] += 1;
+        }
+
+    }
+    for (var x = 0; x < magazine.length; x++) {
+        var letter = magazine[x];
+        if (obj2[letter] === undefined) {
+            obj2[letter] = 1;
+        } else {
+            obj2[letter] += 1;
+        }
+        // if(obj1[letter] === undefined){
+        //     continue;
+        // }
+        // obj1[letter] -= 1;
+        // if(obj1 === {}){
+        //     return true;
+        // }
+    }
+    for (var letter in obj1) {
+        if (obj2[letter] === undefined || obj1[letter] > obj2[letter]) {
+            return false
+        }
+    }
+    return true;
+};
