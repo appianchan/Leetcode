@@ -2904,3 +2904,26 @@ var missingNumber = function (nums) {
 // Output: [2, 2]
 // Explanation: The target area is 4, and all the possible ways to construct it are[1, 4], [2, 2], [4, 1].
 // But according to requirement 2, [1, 4] is illegal; according to requirement 3, [4, 1] is not optimal compared to[2, 2].So the length L is 2, and the width W is 2.
+
+var constructRectangle = function (area) {
+    var final = [];
+    for (var x = 1; x <= area; x++) {
+        if (area % x === 0) {
+            final.push([x, area / x])
+        }
+    }
+
+    var smallest = area - 1;
+    var final_answer = 0;
+    for (var y = 0; y < final.length; y++) {
+        var arr = final[y];
+        if (arr[0] < arr[1]) {
+            continue;
+        }
+        if (smallest >= (arr[0] - arr[1])) {
+            smallest = arr[0] - arr[1];
+            final_answer = arr;
+        }
+    }
+    return final_answer;
+};
