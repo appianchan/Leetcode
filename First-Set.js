@@ -3097,3 +3097,22 @@ var finalPrices = function (prices) {
 // 1 <= cityAi.length, cityBi.length <= 10
 // cityAi != cityBi
 // All strings consist of lowercase and uppercase English letters and the space character.
+
+var destCity = function (paths) {
+    var start = [];
+    var end = [];
+    for (var x = 0; x < paths.length; x++) {
+        start.push(paths[x][0]);
+    }
+    for (var x = 0; x < paths.length; x++) {
+        end.push(paths[x][1]);
+    }
+    for (var x = 0; x < end.length; x++) {
+        var place = end[x];
+        if (start.includes(place)) {
+            continue;
+        } else {
+            return place;
+        }
+    }
+};
