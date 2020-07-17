@@ -3041,3 +3041,24 @@ var numIdenticalPairs = function (nums) {
 
 // Input: prices = [10, 1, 1, 6]
 // Output: [9, 0, 1, 6]
+var finalPrices = function (prices) {
+    var final = [];
+    for (var x = 0; x < prices.length; x++) {
+        var num1 = prices[x];
+        var counter = false;
+        for (var y = x + 1; y < prices.length; y++) {
+            var num2 = prices[y];
+            if (num1 >= num2) {
+                final.push(num1 - num2);
+                counter = true;
+                break;
+            }
+        }
+        if (counter === true) {
+            counter = false;
+        } else {
+            final.push(num1)
+        }
+    }
+    return final;
+};
