@@ -3005,3 +3005,14 @@ var canConstruct = function (ransomNote, magazine) {
 // Input: nums = [1, 2, 3]
 // Output: 0
 
+var numIdenticalPairs = function (nums) {
+    var final = 0;
+    for (var x = 0; x < nums.length; x++) {
+        for (var y = x + 1; y < nums.length; y++) {
+            if (nums[x] === nums[y]) {
+                final++;
+            }
+        }
+    }
+    return final;
+};
