@@ -3229,5 +3229,18 @@ var maximum69Number = function (num) {
 // Output: [0]
 
 var sumZero = function (n) {
-
+    var final = [];
+    if (n % 2 === 0) {
+        for (var x = n / 2; x > 0; x--) {
+            final.push(x);
+            final.push(x * -1);
+        }
+    } else {
+        for (var x = (n - 1) / 2; x > 0; x--) {
+            final.push(x);
+            final.push(x * -1);
+        }
+        final.push(0);
+    }
+    return final;
 };
