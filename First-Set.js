@@ -3145,5 +3145,67 @@ var destCity = function (paths) {
 // Explanation: It is better not to apply any change.
 
 var maximum69Number = function (num) {
-    
+    var placeholder = num;
+    if (num === 6) {
+        return 9;
+    }
+    if (num === 9) {
+        return 9;
+    }
+    if (num === 9999) {
+        return 9999;
+    }
+    if (num > 1000) {
+        if (num - 9000 > 0) {
+            placeholder = placeholder - 9000;
+            if (placeholder - 900 > 0) {
+                placeholder = placeholder - 900;
+                if (placeholder - 90 > 0) {
+                    placeholder -= 90;
+                    if (placeholder - 9 === 0) {
+                        return num;
+                    } else {
+                        return num + 3;
+                    }
+                } else {
+                    return num + 30;
+                }
+            } else {
+                return num + 300;
+            }
+        } else {
+            return num + 3000;
+        }
+    }
+    if (num > 100) {
+        if (placeholder - 900 > 0) {
+            placeholder = placeholder - 900;
+            if (placeholder - 90 > 0) {
+                placeholder -= 90;
+                if (placeholder - 9 === 0) {
+                    return num;
+                } else {
+                    return num + 3;
+                }
+            } else {
+                return num + 30;
+            }
+        } else {
+            return num + 300;
+        }
+    }
+    if (num > 10) {
+        if (placeholder - 90 > 0) {
+            placeholder -= 90;
+            if (placeholder - 9 === 0) {
+                return num;
+            } else {
+                return num + 3;
+            }
+        } else {
+            return num + 30;
+        }
+    }
+
+
 };
