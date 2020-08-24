@@ -3279,5 +3279,23 @@ var sumZero = function (n) {
 // Output: 2
 
 var numWaterBottles = function (numBottles, numExchange) {
-    
+    var change = true;
+    var drunk = numBottles;
+    var empty = numBottles % numExchange;
+    var exchanged = (numBottles - empty) / numExchange;
+
+    while (change === true) {
+        change = false;
+        if ((exchanged + empty) >= numExchange) {
+            var new_full = exchanged + empty;
+            var placeh = empty;
+            change = true;
+            drunk += exchanged;
+            empty = (exchanged + placeh) % numExchange;
+            exchanged = (new_full - empty) / numExchange;
+        } else {
+            drunk += exchanged;
+        }
+    }
+    return drunk;
 };
