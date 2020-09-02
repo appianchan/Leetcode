@@ -3365,7 +3365,7 @@ var shiftGrid = function (grid, k) {
                 if (x === 0 && y === 0) {
                     arr2[0].push(arr[arr.length - 1][arr[0].length - 1])
                 } else if (y === 0 && x !== 0) {
-                    arr2[x].push(arr[x - 1][arr.length - 1]);
+                    arr2[x].push(arr[x - 1][arr[0].length - 1]);
                 } else {
                     arr2[x].push(arr[x][y - 1]);
                 }
