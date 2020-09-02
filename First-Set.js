@@ -3353,5 +3353,27 @@ var stringMatching = function (words) {
 // Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 var shiftGrid = function (grid, k) {
+    var arr = grid;
+    while (k > 0) {
+        var arr2 = [];
+        for (var x = 0; x < grid.length; x++) {
+            arr2.push([]);
+        }
+        // arr2[0].push(arr[arr.length - 1][arr[0].length - 1])
+        for (var x = 0; x < arr.length; x++) {
+            for (var y = 0; y < arr[0].length; y++) {
+                if (x === 0 && y === 0) {
+                    arr2[0].push(arr[arr.length - 1][arr[0].length - 1])
+                } else if (y === 0 && x !== 0) {
+                    arr2[x].push(arr[x - 1][arr.length - 1]);
+                } else {
+                    arr2[x].push(arr[x][y - 1]);
+                }
 
+            }
+        }
+        arr = arr2;
+        k--;
+    }
+    return arr;
 };
