@@ -3331,7 +3331,7 @@ var stringMatching = function (words) {
             if (word1.length > word2.length) {
                 for (var z = 0; z < (word1.length - word2.length + 1); z++) {
                     var sub = word1.substring(z, z + word2.length);
-                    if (sub === word2) {
+                    if (sub === word2 && !final.includes(sub)) {
                         final.push(word2);
                         break;
                     }
@@ -3339,7 +3339,7 @@ var stringMatching = function (words) {
             } else if (word2.length > word1.length) {
                 for (var z = 0; z < (word2.length - word1.length + 1); z++) {
                     var sub = word2.substring(z, z + word1.length);
-                    if (sub === word1) {
+                    if (sub === word1 && !final.includes(sub)) {
                         final.push(word1);
                         break;
                     }
