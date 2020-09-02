@@ -3323,7 +3323,33 @@ var numWaterBottles = function (numBottles, numExchange) {
 // Output: []
 
 var stringMatching = function (words) {
-
+    var final = [];
+    for (var x = 0; x < words.length - 1; x++) {
+        for (var y = x + 1; y < words.length; y++) {
+            var word1 = words[x];
+            var word2 = words[y];
+            if (word1.length > word2.length) {
+                for (var z = 0; z < (word1.length - word2.length + 1); z++) {
+                    var sub = word1.substring(z, z + word2.length);
+                    if (sub === word2) {
+                        final.push(word2);
+                        break;
+                    }
+                }
+            } else if (word2.length > word1.length) {
+                for (var z = 0; z < (word2.length - word1.length + 1); z++) {
+                    var sub = word2.substring(z, z + word1.length);
+                    if (sub === word1) {
+                        final.push(word1);
+                        break;
+                    }
+                }
+            } else if (word1 === word2) {
+                final.push(word1);
+            }
+        }
+    }
+    return final;
 };
 
 // Given a 2D grid of size m x n and an integer k.You need to shift the grid k times.
