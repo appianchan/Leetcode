@@ -3460,3 +3460,20 @@ var sortArray = function (nums) {
 // Output: false
 // Explanation: The robot moves left twice.It ends up two "moves" to the left of the origin.We return false because it is not at the origin at the end of its moves.
 
+var judgeCircle = function (moves) {
+    var obj = {};
+    for (var x = 0; x < moves.length; x++) {
+        var letter = moves[x];
+        if (obj[letter] === undefined) {
+            obj[letter] = 1
+        } else {
+            obj[letter] += 1;
+        }
+
+    }
+    if (obj["U"] === obj["D"] && obj["L"] === obj["R"]) {
+        return true;
+    } else {
+        return false;
+    }
+};
