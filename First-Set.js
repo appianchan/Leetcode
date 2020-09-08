@@ -1627,17 +1627,22 @@ var findLucky = function (arr) {
     var obj = {};
     for (var x = 0; x < arr.length; x++) {
         var num = arr[x];
-        if (obj[num] === null) {
+        if (obj[num] === undefined) {
             obj[num] = 1;
         } else {
             obj[num] += 1;
         }
 
     }
+    var arr = [];
     for (var key in obj) {
-        if (key === obj[key]) {
-            return key;
+        // return key !== obj[key];
+        if (key == obj[key]) {
+            arr.push(obj[key]);
         }
+    }
+    if (arr.length !== 0) {
+        return arr[arr.length - 1]
     }
     return -1;
 };
