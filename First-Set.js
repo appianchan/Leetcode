@@ -3556,3 +3556,11 @@ var toGoatLatin = function (S) {
 
 // Input: arr = [24, 69, 100, 99, 79, 78, 67, 36, 26, 19]
 // Output: 2
+
+var peakIndexInMountainArray = function (arr) {
+    for (var x = 1; x < arr.length; x++) {
+        if (arr[x] < arr[x - 1]) {
+            return x - 1;
+        }
+    }
+};
