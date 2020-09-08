@@ -3505,3 +3505,23 @@ var judgeCircle = function (moves) {
 // Input: "The quick brown fox jumped over the lazy dog"
 // Output: "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa"
 
+var toGoatLatin = function (S) {
+    var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    var counter = 1;
+    S = S.split(" ");
+    for (var x = 0; x < S.length; x++) {
+        var first = S[x][0];
+        if (vowels.includes(first)) {
+            S[x] = S[x].concat("ma");
+        } else {
+            S[x] = S[x].substr(1).concat(first, "ma");
+        }
+        var counter2 = counter;
+        while (counter > 0) {
+            S[x] = S[x].concat("a");
+            counter--;
+        }
+        counter = counter2 + 1;
+    }
+    return S.join(" ");
+};
