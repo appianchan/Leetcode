@@ -3634,6 +3634,24 @@ var busyStudent = function (startTime, endTime, queryTime) {
 
 // Return the number of good triplets.
 
+var countGoodTriplets = function (arr, a, b, c) {
+    var counter = 0;
+    for (var x = 0; x < arr.length - 2; x++) {
+        for (var y = x + 1; y < arr.length - 1; y++) {
+            for (var z = y + 1; z < arr.length; z++) {
+                var value1 = Math.abs(arr[x] - arr[y]);
+                var value2 = Math.abs(arr[y] - arr[z]);
+                var value3 = Math.abs(arr[x] - arr[z]);
+                if (value1 <= a && value2 <= b && value3 <= c) {
+                    counter++;
+                }
+
+            }
+        }
+    }
+    return counter;
+};
+
 
 
 //     Example 1:
