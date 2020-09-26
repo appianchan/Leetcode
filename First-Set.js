@@ -3611,3 +3611,13 @@ var peakIndexInMountainArray = function (arr) {
 // 1 <= startTime.length <= 100
 // 1 <= startTime[i] <= endTime[i] <= 1000
 // 1 <= queryTime <= 1000
+var busyStudent = function (startTime, endTime, queryTime) {
+    var counter = 0;
+    for (var x = 0; x < startTime.length; x++) {
+        if (queryTime >= startTime[x] && queryTime <= endTime[x]) {
+            counter++;
+        }
+    }
+    return counter;
+
+};
