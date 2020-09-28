@@ -3763,5 +3763,19 @@ var canBeEqual = function (target, arr) {
 // Output: 66
 
 var sumOddLengthSubarrays = function (arr) {
+    var sum = 0;
+    var counter = 1;
+    while (counter <= arr.length) {
+        var empty = [];
+        for (var x = counter - 1; counter < arr.length; x++) {
+            var counter2 = 0;
+            while (counter2 !== counter) {
+                sum += arr[x + counter2]
+                counter2 = counter2 + 1;
+            }
+        }
+        counter += 2;
+    }
 
+    return sum;
 };
