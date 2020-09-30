@@ -1269,7 +1269,32 @@ var relativeSortArray = function (arr1, arr2) {
 // A[i][j] is a lowercase letter
 
 var commonChars = function (A) {
-    
+    var first = A.shift();
+    first = first.split("");
+    var arr = [];
+    for (var x = 0; x < first.length; x++) {
+        var letter = first[x];
+        var counter = false;
+        for (var y = 0; y < A.length; y++) {
+            var word = A[y].split("");
+            if (!word.includes(letter)) {
+                counter = true;
+                break;
+            }
+            // else{
+            //     A[y] = word.splice(word.indexOf(letter), 1).join();
+            // }
+        }
+        if (counter === false) {
+            arr.push(letter);
+            for (var z = 0; z < A.length; z++) {
+                var word = A[z];
+                A[z] = A[z].replace(letter, '')
+            }
+        }
+        counter = false;
+    }
+    return arr;
 
 };
 // Given a function f(x, y) and a value z, return all positive integer pairs x and y where f(x, y) == z.
