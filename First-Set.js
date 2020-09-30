@@ -1269,7 +1269,7 @@ var relativeSortArray = function (arr1, arr2) {
 // A[i][j] is a lowercase letter
 
 var commonChars = function (A) {
-    var final = {};
+    
 
 };
 // Given a function f(x, y) and a value z, return all positive integer pairs x and y where f(x, y) == z.
