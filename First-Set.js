@@ -3825,3 +3825,20 @@ var sumOddLengthSubarrays = function (arr) {
 
 // 1 <= S.length <= 20000
 // S consists only of English lowercase letters.
+
+var removeDuplicates = function (S) {
+    S = S.split("");
+    var counter = false;
+    while (counter === false) {
+        counter = true;
+        for (var x = 0; x < S.length - 1; x++) {
+            if (S[x] === S[x + 1]) {
+                counter = false;
+                S.splice(x, 2);
+                break;
+            }
+        }
+    }
+    S = S.join("");
+    return S;
+};
