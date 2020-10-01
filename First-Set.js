@@ -3864,5 +3864,17 @@ var removeDuplicates = function (S) {
 // 1 <= arr[i] <= 1000
 
 var threeConsecutiveOdds = function (arr) {
-    
+    var counter = 0;
+    for (var x = 0; x < arr.length; x++) {
+        var num = arr[x];
+        if (num % 2 === 0) {
+            counter = 0;
+        } else {
+            counter++;
+        }
+        if (counter === 3) {
+            return true;
+        }
+    }
+    return false;
 };
