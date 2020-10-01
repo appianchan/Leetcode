@@ -3899,3 +3899,26 @@ var threeConsecutiveOdds = function (arr) {
 
 // Input: matrix = [[7, 8], [1, 2]]
 // Output: [7]
+
+var luckyNumbers = function (matrix) {
+    var final = [];
+    for (var x = 0; x < matrix.length; x++) {
+        var row = matrix[x];
+        var min = row.reduce((a, b) => Math.min(a, b));
+        var arr = [];
+        var max = 0;
+        for (var z = 0; z < matrix.length; z++) {
+            arr.push(matrix[z][x]);
+
+        }
+        max = arr.reduce((a, b) => Math.max(a, b));
+
+        for (var y = 0; y < row.length; y++) {
+            var num = row[y];
+            if (num === min && num === max) {
+                final.push(num);
+            }
+        }
+    }
+    return final;
+};
