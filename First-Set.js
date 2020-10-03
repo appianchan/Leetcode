@@ -4006,5 +4006,38 @@ var restoreString = function (s, indices) {
 // Output: [1, 3, 3]
 
 var decompressRLElist = function (nums) {
+    // idk why the comment out code doesn't work
+    // var final = [];
+    // for(var x = 0; x < nums.length; x += 2){
+    //     var freq = nums[x];
+    //     var val = nums[x + 1];
+    //     var temp = [];
+    //     for(var y = 0; y < freq; y++){
+    //         temp.push(val);
+    //     }
+    //     final.push(temp);
+    // }
+    // return final;
+    // var answer = final[0];
+    // for(var x = 1; x < final.length; x++){
+    //     answer.concat(final[x]);
+    // }
+    // return answer;
+    var final = [];
+    for (var x = 0; x < nums[0]; x++) {
+        final.push(nums[1]);
+    }
+    var counter = nums.length / 2;
+    for (var x = 1; x < counter; x++) {
+        var temp = [];
+        var val = nums[2 * x + 1];
+        var freq = nums[2 * x];
+        for (var y = 0; y < freq; y++) {
+            temp.push(val);
+        }
+        final = final.concat(temp);
+    }
+    return final;
+
 
 };
