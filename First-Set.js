@@ -3974,7 +3974,15 @@ var defangIPaddr = function (address) {
 // Output: "rat"
 
 var restoreString = function (s, indices) {
-
+    s = s.split("");
+    var arr = [];
+    for (var x = 0; x < s.length; x++) {
+        var index = indices.indexOf(x);
+        // return index;
+        arr.push(s[index]);
+    }
+    arr = arr.join("");
+    return arr;
 };
 
 // We are given a list nums of integers representing a list compressed with run - length encoding.
