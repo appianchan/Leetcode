@@ -3938,7 +3938,7 @@ var luckyNumbers = function (matrix) {
 // Input: address = "255.100.50.0"
 // Output: "255[.]100[.]50[.]0"
 var defangIPaddr = function (address) {
-
+    return address.split(".").join("[.]");
 };
 
 // Given a string s and an integer array indices of the same length.
