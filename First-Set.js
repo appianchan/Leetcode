@@ -4114,7 +4114,34 @@ var numTeams = function (rating) {
 // Input: arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // Output: 5
 var minSetSize = function (arr) {
-
+    var final = 0;
+    var obj = {};
+    var threshhold = arr.length / 2;
+    for (var x = 0; x < arr.length; x++) {
+        var num = arr[x];
+        if (!obj[num]) {
+            obj[num] = 1;
+        } else {
+            obj[num] += 1;
+        }
+    }
+    var values = Object.values(obj);
+    for (var x = 0; x < values.length; x++) {
+        var num = values[x];
+        if (num >= threshhold) {
+            return 1;
+        }
+    }
+    for (var x = 0; x < values.length - 1; x++) {
+        var num1 = values[x];
+        for (var y = x + 1; y < values.length; y++) {
+            var num2 = num1 + values[y];
+            if (num2 >= threshhold) {
+                return 2;
+            }
+        }
+    }
+    return threshhold;
 };
 
 // Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature.If there is no future day for which this is possible, put 0 instead.
