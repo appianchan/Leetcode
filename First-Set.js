@@ -4068,7 +4068,20 @@ var decompressRLElist = function (nums) {
 // Output: 4
 
 var numTeams = function (rating) {
-
+    var final = 0;
+    for (var x = 0; x < rating.length - 2; x++) {
+        var num1 = rating[x];
+        for (var y = x + 1; y < rating.length - 1; y++) {
+            var num2 = rating[y];
+            for (var z = y + 1; z < rating.length; z++) {
+                var num3 = rating[z];
+                if ((num1 < num2 && num2 < num3) || (num1 > num2 && num2 > num3)) {
+                    final++;
+                }
+            }
+        }
+    }
+    return final;
 };
 // Given an array arr.You can choose a set of integers and remove all the occurrences of these integers in the array.
 
