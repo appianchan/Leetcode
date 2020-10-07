@@ -4123,5 +4123,22 @@ var minSetSize = function (arr) {
 
 //     Note: The length of temperatures will be in the range[1, 30000].Each temperature will be an integer in the range[30, 100].
 var dailyTemperatures = function (T) {
-
+    var final = [];
+    for (var x = 0; x < T.length - 1; x++) {
+        var current_temp = T[x];
+        var counter = false;
+        for (var y = x + 1; y < T.length; y++) {
+            var next_temp = T[y];
+            if (next_temp > current_temp) {
+                final.push((y - x));
+                counter = true;
+                break;
+            }
+        }
+        if (counter === false) {
+            final.push(0);
+        }
+    }
+    final.push(0);
+    return final;
 };
