@@ -4236,3 +4236,26 @@ END;
 //     1 <= A.length <= 1000
 // 1 <= A[i] <= 10 ^ 6
 // A[i] != A[j] for all i != j
+var deckRevealedIncreasing = function (deck) {
+    if (!deck || deck.length < 2) {
+        return deck;
+    }
+
+    // sort in descending order
+    const sortedDeck = deck.sort((a, b) => b - a);
+    // return sortedDeck;
+    const result = [];
+
+    // backwards simulation
+    for (const card of sortedDeck) {
+        if (result.length < 2) {
+            result.unshift(card);
+            continue;
+        }
+
+        result.unshift(result.pop());
+        result.unshift(card);
+    }
+
+    return result;
+};
