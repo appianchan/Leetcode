@@ -4191,3 +4191,10 @@ var dailyTemperatures = function (T) {
 // | 2  | B    | m   | 1500   |
 // | 3  | C    | f   | 5500   |
 // | 4  | D    | m   | 500    |
+
+UPDATE salary
+SET
+sex = CASE sex
+WHEN 'm' THEN 'f'
+ELSE 'm'
+END;
