@@ -4332,3 +4332,48 @@ var minAddToMakeValid = function (S) {
 // 1 <= words.length <= 50
 // 1 <= pattern.length = words[i].length <= 20
 
+var findAndReplacePattern = function (words, pattern) {
+    var final = [];
+    pattern = pattern.split("");
+    var pattern_frame = {};
+    for (var x = 0; x < pattern.length; x++) {
+        var letter = pattern[x];
+        if (!pattern_frame[letter]) {
+            pattern_frame[letter] = 1;
+        } else {
+            pattern_frame[letter] += 1;
+        }
+    }
+    var pattern_values = Object.values(pattern_frame).sort(function (a, b) { return a - b });
+    // return pattern_values;
+    for (var x = 0; x < words.length; x++) {
+        var word = words[x];
+        var word_arr = word.split("");
+        var frame = {};
+        for (var y = 0; y < word_arr.length; y++) {
+            var letter = word[y];
+            if (!frame[letter]) {
+                frame[letter] = 1;
+            } else {
+                frame[letter] += 1;
+            }
+        }
+        var values = Object.values(frame).sort(function (a, b) { return a - b });
+        if (values.length !== pattern_values.length) {
+            break;
+        } else {
+            var counter = false;
+            for (var y = 0; y < values.length; y++) {
+                if (values[y] !== pattern_values[y]) {
+                    counter = true;
+                    break;
+                }
+            }
+            if (counter === false) {
+                final.push(word);
+            }
+        }
+
+    }
+    return final;
+};
