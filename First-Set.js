@@ -4287,3 +4287,22 @@ var deckRevealedIncreasing = function (deck) {
 
 // Input: "()))(("
 // Output: 4
+var minAddToMakeValid = function (S) {
+    var final_counter = 0;
+    var left_paren_counter = 0;
+    S = S.split("");
+    for (var x = 0; x < S.length; x++) {
+        var letter = S[x];
+        if (letter === ")" && left_paren_counter === 0) {
+            final_counter++;
+        } else if (letter === ")" && left_paren_counter > 0) {
+            left_paren_counter--;
+        }
+        if (letter === "(") {
+            left_paren_counter++;
+        }
+
+    }
+    final_counter = final_counter + left_paren_counter;
+    return final_counter;
+};
