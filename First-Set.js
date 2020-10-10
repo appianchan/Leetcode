@@ -4399,3 +4399,10 @@ var findAndReplacePattern = function (words, pattern) {
 //     num >= 1
 // You could assume no leading zero bit in the integer’s binary representation.
 // This question is the same as 1009: https://leetcode.com/problems/complement-of-base-10-integer/
+var findComplement = function (num) {
+    var binary = num.toString(2).split('').map(item => {
+        if (item == 0) return 1
+        else if (item == 1) return 0
+    }).join('');
+    return parseInt(binary, 2);
+};
