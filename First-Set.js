@@ -4531,3 +4531,31 @@ var maxSubArray = function (nums) {
 // Explanation:
 // "bbaA" is also a valid answer, but "Aabb" is incorrect.
 // Note that 'A' and 'a' are treated as two different characters.
+
+var frequencySort = function (s) {
+    var obj = {};
+    var final = [];
+    s = s.split("");
+    for (var x = 0; x < s.length; x++) {
+        var letter = s[x];
+        if (!obj[letter]) {
+            obj[letter] = 1;
+        } else {
+            obj[letter] += 1;
+        }
+    }
+    var values = Object.values(obj);
+    var keys = Object.keys(obj);
+    values.sort(function (a, b) { return b - a })
+    while (values.length > 0) {
+        var num = values[0];
+        var answer = keys.find(key => obj[key] === num);
+        for (var z = 0; z < num; z++) {
+            final.push(answer);
+        }
+        delete obj[answer];
+
+        values.shift();
+    }
+    return final.join("");
+};
