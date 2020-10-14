@@ -4598,5 +4598,26 @@ var frequencySort = function (s) {
 // 1 <= num_people <= 1000
 
 var distributeCandies = function (candies, num_people) {
+    var candy_counter = 1;
+    var position_counter = 0;
+    var final = [];
+    for (var x = 0; x < num_people; x++) {
+        final.push(0);
+    }
+    while (candies > 0) {
+        if (candies > candy_counter) {
+            final[position_counter] = final[position_counter] + candy_counter;
+        } else {
+            final[position_counter] = final[position_counter] + candies;
+        }
 
+        candies = candies - candy_counter;
+        candy_counter++;
+        if (position_counter === (num_people - 1)) {
+            position_counter = 0;
+        } else {
+            position_counter++;
+        }
+    }
+    return final;
 };
