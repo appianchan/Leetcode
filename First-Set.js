@@ -4647,3 +4647,23 @@ var distributeCandies = function (candies, num_people) {
 
 // 1 <= stones.length <= 30
 // 1 <= stones[i] <= 1000
+
+var lastStoneWeight = function (stones) {
+
+    stones.sort(function (a, b) { return b - a });
+    while (stones.length > 1) {
+        var stone1 = stones.shift();
+        var stone2 = stones.shift();
+        var result = stone1 - stone2;
+        if (result <= 0) {
+            continue;
+        } else {
+            stones.unshift(result);
+        }
+        stones.sort(function (a, b) { return b - a });
+    }
+    if (stones.length === 0) {
+        return 0;
+    }
+    return stones[0];
+};
