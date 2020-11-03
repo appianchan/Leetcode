@@ -4716,3 +4716,40 @@ WHERE area>3000000 OR population>25000000
 // Output: 10
 // Explanation: The strings that can be formed are "hello" and "world" so the answer is 5 + 5 = 10.
 
+var countCharacters = function(words, chars) {
+    var chars_obj = {};
+    chars = chars.split("");
+    for(var x = 0; x < chars.length; x++){
+        var char = chars[x];
+        if(!chars_obj[char]){
+            chars_obj[char] = 1;
+        }else{
+            chars_obj[char]++;
+        }
+    }
+    var final = 0;
+   for(var x = 0; x < words.length; x++){
+       var temp_obj = {};
+       var word = words[x];
+       word = word.split("");
+       for(var y = 0; y < word.length; y++){
+           var char = word[y];
+           if(!temp_obj[char]){
+                temp_obj[char] = 1;
+            }else{
+                temp_obj[char]++;
+            }
+       }
+       var counter = false;
+       for(var z in temp_obj){
+           if(chars_obj[z] && temp_obj[z] > chars_obj[z]){
+               counter = true;
+               break;
+           }
+       }
+       if(counter === false){
+           final = final + word.length;
+       }
+   } 
+    return final;
+};
